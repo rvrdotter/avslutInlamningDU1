@@ -1,3 +1,6 @@
+:root{
+    --turqCol: rgb(93,177,153);
+}
 *{
     margin: 0;
     padding: 0;
@@ -91,7 +94,12 @@ article div{
     display: flex;
     flex-direction: column;
 }
-section:first-of-type>article>div:nth-child(1){
+section>div:first-child{
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+}
+section:first-of-type>div:nth-child(1)>article>div:nth-child(1){
     grid-column: 1 / span 2;
     grid-row: 1 / span 2;
     aspect-ratio: 1;
@@ -99,42 +107,42 @@ section:first-of-type>article>div:nth-child(1){
     background-size: cover;
     background-position: center;
 }
-section:first-of-type>article>div:nth-child(2){
+section:first-of-type>div:nth-child(1)>article>div:nth-child(2){
     grid-column: 1;
     grid-row: 3;
     background-color: whitesmoke;
     padding: 20px 10px;
     border-radius: 0 0 0 10px;
 }
-section:first-of-type>article>div:nth-child(2)>ol{
+section:first-of-type>div:nth-child(1)>article>div:nth-child(2)>ol{
     list-style-position: inside;
 }
-section:first-of-type>article>div:nth-child(3){
+section:first-of-type>div:nth-child(1)>article>div:nth-child(3){
     grid-column: 2;
     grid-row: 3;
     background-color: whitesmoke;
     padding: 20px 10px;
     border-radius: 0 0 10px 0;
 }
-section:first-of-type>article>div:nth-child(3)>ol{
+section:first-of-type>div:nth-child(1)>article>div:nth-child(3)>ol{
     list-style-position: inside;
 }
 
 /*Organisation of the text might need revisions
 */
-section:first-of-type>div:nth-child(2){
+section:first-of-type>div:nth-child(1)>div:nth-child(2){
     display: flex;
     flex-direction: column;
     list-style-position: inside;
     gap: 40px;
 }
-section:first-of-type>div:nth-child(2) ol{
+section:first-of-type>div:nth-child(1)>div:nth-child(2) ol{
     padding-left: 20px;
 }
 
-/*sorting out the grid for the snaller
+/*sorting out the grid for the smaller
 boxes of text*/
-section:first-of-type>div:nth-child(3){
+section:first-of-type>div:nth-child(2){
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -142,24 +150,24 @@ section:first-of-type>div:nth-child(3){
     width: 100%;
     gap: 4px;
 }
-section:first-of-type>div:nth-child(3)>div{
+section:first-of-type>div:nth-child(2)>div{
     padding: 10px;
     display: flex;
     align-items: center;
 }
-section:first-of-type>div:nth-child(3)>div:nth-child(1){
+section:first-of-type>div:nth-child(2)>div:nth-child(1){
     grid-row: 1;
     grid-column: 1;
     background-color: whitesmoke;
     border-radius: 15px 0 15px 0;
 }
-section:first-of-type>div:nth-child(3)>div:nth-child(2){
+section:first-of-type>div:nth-child(2)>div:nth-child(2){
     grid-row: 1;
     grid-column: 2 / span 2;
     background-color: whitesmoke;
     border-radius: 0 15px 15px 0;
 }
-section:first-of-type>div:nth-child(3)>div:nth-child(3){
+section:first-of-type>div:nth-child(2)>div:nth-child(3){
     grid-row: 2;
     grid-column: 2;
     color: rgb(207, 207, 207);
@@ -169,35 +177,102 @@ section:first-of-type>div:nth-child(3)>div:nth-child(3){
     display: flex;
     align-items: flex-end;
 }
-section:first-of-type>div:nth-child(3)>div:nth-child(4){
+section:first-of-type>div:nth-child(2)>div:nth-child(4){
     grid-row: 2;
     grid-column: 3;
     background-color: whitesmoke;
     border-radius: 15px 15px 0 15px;
 }
 
-section:last-of-type>article>div:nth-child(1){
+/*specific placement for the second album
+this is actually not great because it gives the following
+rules alot of specificity which makes
+doing my mediaqueires much harder
+thx Ronja great!
+*/
+section:last-of-type>div:nth-child(1)>article>div:nth-child(1){
     grid-column: 1 / span 2;
     grid-row: 1 / span 2;
     aspect-ratio: 1;
-    background-image: url(images/albumCover1.png);
+    background-image: url(images/albumCover2.png);
     background-size: cover;
     background-position: center;
 }
-section:last-of-type>article>div:nth-child(2){
-
-}
-section:last-of-type>article>div:nth-child(2)>ol{
+section:last-of-type>div:nth-child(1)>article>div:nth-child(2){
+    grid-column: 1;
+    grid-row: 3;
+    padding: 20px 10px;
+    border-radius: 0 0 0 10px;
+    background-color: var(--turqCol);
     
 }
-section:last-of-type>article>div:nth-child(3){
-
+section:last-of-type>div:nth-child(1)>article>div:nth-child(2)>ol{
+    list-style-position: inside;
 }
-section:last-of-type>article>div:nth-child(3)>ol{
-    
+section:last-of-type>div:nth-child(1)>article>div:nth-child(3){
+    grid-column: 2;
+    grid-row: 3;
+    padding: 20px 10px;
+    border-radius: 0 0 10px 0;
+    background-color: var(--turqCol);
+}
+section:last-of-type>div:nth-child(1)>article>div:nth-child(3)>ol{
+    list-style-position: inside;
+}
+/*Text styling for text section
+*/
+section:last-of-type>div:nth-child(1)>div:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    list-style-position: inside;
+    gap: 40px;
+}
+section:last-of-type>div:nth-child(1)>div:nth-child(2) ol{
+    padding-left: 20px;
+}
+/*lower four squares grid for second section*/
+section:last-of-type>div:nth-child(2){
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 350px;
+    width: 100%;
+    gap: 4px;
+}
+section:last-of-type>div:nth-child(2)>div{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+section:last-of-type>div:nth-child(2)>div:nth-child(1){
+    grid-column: 1/span 2;
+    grid-row: 1;
+    background-color: var(--turqCol);
+}
+section:last-of-type>div:nth-child(2)>div:nth-child(2){
+    grid-column: 3;
+    grid-row: 1;
+    background-color: var(--turqCol);
+}
+section:last-of-type>div:nth-child(2)>div:nth-child(3){
+    grid-column: 1/span 2;
+    grid-row: 2;
+    background-image: url(images/elGoevi.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    color: whitesmoke;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+section:last-of-type>div:nth-child(2)>div:nth-child(4){
+    grid-column: 3;
+    grid-row: 2;
+    background-color: var(--turqCol);
 }
 
-@media (min-width: 501px) {
+
+@media (min-width: 501px) and (max-width: 800px){
     article{
         grid-template-columns: 1fr 1fr auto;
         grid-template-rows: 1fr 1fr;
@@ -206,16 +281,145 @@ section:last-of-type>article>div:nth-child(3)>ol{
     article div{
         justify-content: center;
     }
-    section:first-of-type>article>div:nth-child(1){
+
+    section:first-of-type>div:nth-child(1)>article>div:nth-child(1){
         grid-column: 1/span 2;
         grid-row: 1/span 2;
     }  
-    section:first-of-type>article>div:nth-child(2){
+    section:first-of-type>div:nth-child(1)>article>div:nth-child(2){
         grid-column: 3;
         grid-row: 1;
     } 
-    section:first-of-type>article>div:nth-child(3){
+    section:first-of-type>div:nth-child(1)>article>div:nth-child(3){
         grid-column: 3;
         grid-row: 2;
     } 
+
+    section:last-of-type>div:nth-child(1)>article>div:nth-child(1){
+        grid-column: 1/span 2;
+        grid-row: 1/span 2;
+    }  
+    section:last-of-type>div:nth-child(1)>article>div:nth-child(2){
+        grid-column: 3;
+        grid-row: 1;
+    } 
+    section:last-of-type>div:nth-child(1)>article>div:nth-child(3){
+        grid-column: 3;
+        grid-row: 2;
+    }
+    body{
+        background-image: none;
+        background-color: rgb(73, 73, 73);
+    }
+    /*first 4 grid*/
+    section:first-of-type>div:nth-child(2){
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        height: 350px;
+        width: 100%;
+        gap: 4px;
+    }
+    section:first-of-type>div:nth-child(2)>div:nth-child(2){
+        grid-row: 1;
+        grid-column: 3 / span 2;
+        background-color: whitesmoke;
+        border-radius: 0 15px 15px 0;
+    }
+    section:first-of-type>div:nth-child(2)>div:nth-child(4){
+        grid-row: 2;
+        grid-column: 3;
+        background-color: whitesmoke;
+        border-radius: 15px 15px 0 15px;
+    }
+
+    /*second 4 grid*/
+    section:last-of-type>div:nth-child(2){
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        height: 350px;
+        width: 100%;
+        gap: 4px;
+    }
+    section:last-of-type>div:nth-child(2)>div:nth-child(3){
+        grid-row: 2;
+        grid-column: 2 / span 2;
+        border-radius: 0 15px 15px 0;
+    }
+    section:last-of-type>div:nth-child(2)>div:nth-child(4){
+        grid-row: 2;
+        grid-column: 4;
+        border-radius: 15px 15px 0 15px;
+    }
+}
+@media (min-width: 801px){
+    section>div:first-child{
+        flex-direction: row-reverse;
+    }
+    section:first-of-type>div:nth-child(1)>article{
+        flex: 1 0 40%;
+    }
+    section:last-of-type>div:nth-child(1)>article{
+        flex: 1 0 40%;
+    }
+    section:first-of-type>div:nth-child(2){
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        height: 150px;
+        width: 100%;
+        gap: 4px;
+        grid-auto-rows: 0;
+    }
+    section:first-of-type>div:nth-child(2)>div:nth-child(1){
+        grid-row: 1;
+        grid-column: 1;
+        border-radius: 0 15px 15px 0;
+    }
+    section:first-of-type>div:nth-child(2)>div:nth-child(2){
+        grid-row: 1;
+        grid-column: 3/span 2;
+        border-radius: 15px 15px 0 15px;
+    }
+    section:first-of-type>div:nth-child(2)>div:nth-child(3){
+        grid-row: 1;
+        grid-column: 5;
+        border-radius: 0 15px 15px 0;
+    }
+    section:first-of-type>div:nth-child(2)>div:nth-child(4){
+        grid-row: 1;
+        grid-column: 6;
+        border-radius: 15px 15px 0 15px;
+    }
+
+    section:last-of-type>div:nth-child(2){
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        height: 150px;
+        width: 100%;
+        gap: 4px;
+        grid-auto-rows: 0;
+    }
+    section:last-of-type>div:nth-child(2)>div:nth-child(1){
+        grid-row: 1;
+        grid-column: 1/span 2;
+        border-radius: 0 15px 15px 0;
+    }
+    section:last-of-type>div:nth-child(2)>div:nth-child(2){
+        grid-row: 1;
+        grid-column: 3;
+        border-radius: 15px 15px 0 15px;
+    }
+    section:last-of-type>div:nth-child(2)>div:nth-child(3){
+        grid-row: 1;
+        grid-column: 4/span 2;
+        border-radius: 0 15px 15px 0;
+    }
+    section:last-of-type>div:nth-child(2)>div:nth-child(4){
+        grid-row: 1;
+        grid-column: 6;
+        border-radius: 15px 15px 0 15px;
+    }
 }
