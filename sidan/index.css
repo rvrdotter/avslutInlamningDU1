@@ -85,7 +85,7 @@ nav bar get's flex, set width and a gap
 nav {
     display: flex;
     width: 100%;
-    gap: 10px;
+    gap: 20px;
 }
 
 nav>a {
@@ -506,6 +506,8 @@ section:last-of-type>div:nth-child(2)>div:nth-child(4) {
     }
 }
 
+
+
 @media (min-width: 801px) {
     body {
         background-image: url(images/carseatbackground.jpg);
@@ -596,8 +598,85 @@ section:last-of-type>div:nth-child(2)>div:nth-child(4) {
     }
 }
 
+/*
+FONT SIZE MEDIA QUERIES
+*/
+@media (min-width: 801px) and (max-width: 900px) {
+    div {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 64px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3,
+    h4 {
+        font-size: 20px;
+    }
+}
+
+@media (min-width:901px) and (max-width:1200px) {
+
+    div {
+        font-size: 1.8vw;
+    }
+
+    h1 {
+        font-size: 7.5vw;
+    }
+
+    h2 {
+        font-size: 3.15vw;
+    }
+
+    h3,
+    h4 {
+        font-size: 2.25vw;
+    }
+}
+
+@media (min-width:1201px) {
+    div {
+        font-size: 22px;
+    }
+
+    h1 {
+        font-size: 90px;
+    }
+
+    h2 {
+        font-size: 34px;
+    }
+
+    h3,
+    h4 {
+        font-size: 28px;
+    }
+}
+
 @media (max-width:500px) {
     section div article div ol {
         font-size: 3vw;
+    }
+
+    nav {
+        gap: 5px;
+    }
+}
+
+@media (max-width:320px) {
+    main {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        justify-content: center;
+        align-items: center;
     }
 }
