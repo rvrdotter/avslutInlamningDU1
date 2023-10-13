@@ -47,6 +47,12 @@ h4 {
     font-size: clamp(16px, 2.5vw, 28px);
 }
 
+ul {
+    list-style-position: inside;
+    list-style-type: none;
+    padding-left: 20px;
+}
+
 body {
     display: flex;
     justify-content: center;
